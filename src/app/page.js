@@ -84,7 +84,6 @@ export default function Home() {
           flex-direction: column;
           width: 80%;
           max-width: 1200px;          /* optional: limit how wide it grows on large screens */
-          background-color: blue;
         }
 
         .title-container {
