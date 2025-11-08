@@ -49,7 +49,7 @@ export default function ProjectCard({
   subtitle,
   date,
   images = [],
-  description,
+  description = [],
   skills = [],
   documentationUrl,
   codebaseUrl,
@@ -105,7 +105,15 @@ export default function ProjectCard({
           <h2>{subtitle}</h2>
           <p className="date">{date}</p>
         </div>
-        <p className="description">{description}</p>
+        <div className="description">
+          {Array.isArray(description) ? (
+            description.map((point, index) => (
+              <p key={index}>• {point}</p>
+            ))
+          ) : (
+            <p>{description}</p>
+          )}
+        </div>
         <div className="skills-section">
           <h3>Skills</h3>
           <div className="skills-grid">
@@ -169,17 +177,24 @@ export default function ProjectCard({
           transform: translateX(-50%);
           display: flex;
           gap: 8px;
+          /* CHANGE: Added styles for the 'transparent pill' effect */
+          padding: 8px 12px;
+          background-color: rgba(0, 0, 0, 0.4);
+          border-radius: 9999px; /* Pill shape */
+          backdrop-filter: blur(5px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
         }
         .dot {
-          width: 10px;
-          height: 10px;
+          width: 8px; /* Slightly smaller for a cleaner look */
+          height: 8px;
           border-radius: 50%;
           background-color: rgba(255, 255, 255, 0.5);
           cursor: pointer;
-          transition: background-color 0.3s;
+          transition: all 0.3s; /* Animate all properties */
         }
         .dot.active {
           background-color: white;
+          transform: scale(1.1); /* Make the active dot slightly larger */
         }
         
         .text-container {
@@ -208,10 +223,15 @@ export default function ProjectCard({
         }
         
         .description {
+          display: flex;
+          flex-direction: column;
+          gap: 12px; /* Space between bullet points */
+        }
+        .description p {
           font-size: 16px;
           line-height: 1.6;
           color: #D0D0D0;
-          /* CHANGE: Removed flex-grow and margin-top. Gap handles spacing. */
+          margin: 0; /* Reset margin for paragraphs inside */
         }
 
         .skills-section h3 {
@@ -232,7 +252,8 @@ export default function ProjectCard({
           flex-direction: row;
           flex-wrap: wrap;
           margin-right: 32px;
-          gap: 40px;
+          column-gap: 24px;
+          row-gap: 12px;
         }
         .links a {
           color: #1E90FF;
@@ -253,9 +274,10 @@ export default function ProjectCard({
           }
           .photo-container {
             /* CHANGE: Adjusted responsive photo container style. */
-            aspect-ratio: 1 / 1; /* Use a wider aspect ratio for mobile. */
+            aspect-ratio: 16 / 9; /* Use a wider aspect ratio for mobile. */
             border-right: none;
             border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            max-height: 400px;
           }
           .text-container {
             padding: 24px; /* Slightly reduce padding on mobile. */
@@ -265,6 +287,12 @@ export default function ProjectCard({
           }
           .header h2{
             padding-right: 32px;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .photo-container{
+            max-height: 300px;
           }
         }
       `}</style>
