@@ -3,7 +3,7 @@
 import ProjectCard from "./components/ProjectCard.jsx";
 
 import robotImage1 from "./lib/Robot.jpg";
-// import robotImage2 from "./lib/controller.jpg"; 
+import robotImage2 from "./lib/controller.jpg"; 
 
 import controllerImage1 from "./lib/TempSensor.jpg";
 import controllerImage2 from "./lib/Pulse.jpg";
@@ -16,6 +16,7 @@ export default function Home() {
     date: "March 2025",
     images: [
       robotImage1,
+      robotImage2,
     ],
     description: [
       "Programmed STM32 and EFM8 microcontrollers in C to coordinate an autonomous robot via radio communication, implementing UART protocols and resolving interrupt-based timing conflicts",
