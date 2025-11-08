@@ -30,10 +30,19 @@ export default function Home() {
   return (
     <div className="page-root">
       <div className="page-container">
-        <h1>Cole Pybus</h1>
-        <div className="divider"/>
-        <h1>Engineering Portfolio</h1>
-        <ProjectCard {...project1}/>
+        <div className="title-container">
+          <h1>Cole Pybus</h1>
+          <div className="divider"/>
+          <h1>Engineering Portfolio</h1>
+        </div>
+        <div className="intro-container">
+          <p>I’m a third year electrical engineering student at the University of British Columbia in Vancouver, Canada</p>
+          <p>Currently on a CO-OP term as a software engineering team lead at Civiconnect</p>
+          <p>My projects below showcase my skills in computer, software, and electrical engineering</p>
+        </div>
+        <div className="projects-container">
+          <ProjectCard {...project1}/>
+        </div>
       </div>
 
       <style jsx>{`
@@ -55,6 +64,22 @@ export default function Home() {
           background-color: blue;
         }
 
+        .title-container {
+          margin-bottom: 32px;
+        }
+
+        .intro-container{
+          margin-bottom: 32px;
+        }
+
+        .projects-container{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 40px;
+        }
+
         /* Divider line under the heading */
         .page-container .divider {
           align-self: flex-start;                /* keep the line aligned with the heading */
@@ -74,9 +99,9 @@ export default function Home() {
 
         /* Paragraph: match Figma Paragraph (Pontano Sans 24) */
         .page-container p {
-          font-size: 24px;            /* Figma paragraph size */
+          font-size: 16px;            /* Figma paragraph size */
           line-height: 1.5;           /* comfortable reading line-height */
-          margin: 0 0 1rem 0;
+          margin: 0 0 0.4rem 0;
           color: inherit;
         }
 

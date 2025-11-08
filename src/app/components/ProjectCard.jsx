@@ -151,9 +151,7 @@ export default function ProjectCard({
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          background-color: rgba(0, 0, 0, 0.5);
           color: white;
-          border: none;
           padding: 10px;
           cursor: pointer;
           border-radius: 50%;
@@ -162,7 +160,10 @@ export default function ProjectCard({
           justify-content: center;
           z-index: 10;
           opacity: 0;
-          transition: opacity 0.3s;
+          background-color: rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(5px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          transition: all 0.3s; 
         }
         .photo-container:hover .carousel-btn {
           opacity: 1;
