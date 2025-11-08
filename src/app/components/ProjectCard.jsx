@@ -267,8 +267,7 @@ export default function ProjectCard({
           align-items: center;
           justify-content: flex-start;
           gap: 12px;
-          margin-right: 16px;
-          flex-wrap: flex;
+          flex-wrap: wrap;
         }
         
         .links {
@@ -313,6 +312,9 @@ export default function ProjectCard({
           .header h2{
             padding-right: 32px;
           }
+          .skills-grid {
+          margin-right: 32px;
+        }
         }
 
         @media (max-width: 600px) {

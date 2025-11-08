@@ -11,7 +11,7 @@ import controllerImage2 from "./lib/Pulse.jpg";
 export default function Home() {
 
   const project1 = {
-    title: "Fully Autonomous Coin Detecting Robot",
+    title: "Autonomous Coin Detecting Robot",
     subtitle: "ELEC 291 | UBC",
     date: "March 2025",
     images: [
