@@ -3,7 +3,7 @@
 import ProjectCard from "./components/ProjectCard.jsx";
 
 import robotImage1 from "./lib/Robot.jpg";
-import robotImage2 from "./lib/Controller.jpg"; 
+import robotImage2 from "./lib/controller.jpg"; 
 
 import controllerImage1 from "./lib/TempSensor.jpg";
 import controllerImage2 from "./lib/Pulse.jpg";
