@@ -3,7 +3,10 @@
 import ProjectCard from "./components/ProjectCard.jsx";
 
 import robotImage1 from "./lib/Robot.jpg";
-import robotImage2 from "./lib/controller.jpg"; 
+import robotImage2 from "./lib/Controller.jpg"; 
+
+import controllerImage1 from "./lib/TempSensor.jpg";
+import controllerImage2 from "./lib/Pulse.jpg";
 
 export default function Home() {
 
@@ -16,15 +19,34 @@ export default function Home() {
       robotImage2,
     ],
     description: [
-      "Programmed STM32 and EFM8 microcontrollers in C to coordinate an autonomous robot via radio communication, implementing UART protocols and resolving interrupt-based timing conflicts.",
-      "Engineered hardware subsystems including H-bridge motor drivers, servo-actuated robotic arms, and electromagnets for precise motion control and coin collection.",
-      "Designed and tuned a Colpitts oscillator-based metal detector, achieving consistent detection of Canadian coins through calibrated inductive sensing and software thresholding.",
-      "Integrated multi-sensor feedback and control logic, validating system performance through iterative testing that demonstrated stable autonomous navigation and high coin-picking accuracy."
+      "Programmed STM32 and EFM8 microcontrollers in C to coordinate an autonomous robot via radio communication, implementing UART protocols and resolving interrupt-based timing conflicts",
+      "Engineered hardware subsystems including H-bridge motor drivers, servo-actuated robotic arms, and electromagnets for precise motion control and coin collection",
+      "Designed and tuned a Colpitts oscillator-based metal detector, achieving consistent detection of Canadian coins through calibrated inductive sensing and software thresholding",
+      "Integrated multi-sensor feedback and control logic, validating system performance through iterative testing that demonstrated stable autonomous navigation and high coin-picking accuracy"
     ],
     skills: ["C++", "Git", "Firmware", "Embedded", "Automation", "Sensors", "Circuitry"],
-    documentationUrl: "#",
-    codebaseUrl: "#",
-    videoUrl: "#",
+    documentationUrl: "https://drive.google.com/file/d/1LR_fHoD2zY1S5dqwhz8-en0VsioScQ09/view?usp=sharing",
+    codebaseUrl: "https://github.com/colepybus/coin-detecting-robot-project",
+    videoUrl: "https://youtu.be/r7DsbAJ_780?si=tZ12u6niXaYatLJn",
+  };
+
+  const project2 = {
+    title: "Reflow Oven Temperature Control System",
+    subtitle: "ELEC 291 | UBC",
+    date: "February 2025",
+    images: [
+      controllerImage1,
+      controllerImage2,
+    ],
+    description: [
+      "Developed firmware in 8051 Assembly to control a reflow oven via a finite state machine, managing temperature ramp-up, soak, and reflow stages with precise timing and safety abort conditions resulting in accurate PCB soldering within 3 degrees Celsius tolerance",
+      "Engineered an analog front-end circuit with an OP07 op-amp for thermocouple voltage amplification and LM335 cold-junction compensation, performing resistor value calculations and validation tests to ensure reliable sensor readings across 25 to 240°C",
+      "Implemented serial communication and Python-based data visualization, writing a program that received live temperature data from the microcontroller, generated a real-time strip chart using matplotlib, and issued mobile notifications via the Twilio API",
+      "Integrated digital control and hardware testing by designing multiplexed pushbutton inputs with debouncing and safety constraints, verifying complete system operation through iterative bench tests and successful reflow of EFM8 PCB assemblies"
+    ],
+    skills: ["Assembly", "Python", "Git", "Firmware", "Embedded", "Circuitry", "Control"],
+    documentationUrl: "https://drive.google.com/file/d/1WaSEEIW4RzVoRPQ2Ls94765pbYgXjYRl/view?usp=sharing",
+    codebaseUrl: "https://github.com/colepybus/microwave-oven-reflow-controller"
   };
 
   return (
@@ -42,6 +64,7 @@ export default function Home() {
         </div>
         <div className="projects-container">
           <ProjectCard {...project1}/>
+          <ProjectCard {...project2}/>
         </div>
       </div>
 

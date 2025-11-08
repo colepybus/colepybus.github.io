@@ -21,7 +21,7 @@ const skillIcons = {
   'html': { icon: <FaHtml5 />, color: '#E34F26' },
   'python': { icon: <FaPython />, color: '#3776AB' },
   'nodejs': { icon: <FaNodeJs />, color: '#339933' },
-  'x86 assembly': { icon: <SiAssemblyscript />, color: '#007ACC' },
+  'assembly': { icon: <SiAssemblyscript />, color: '#007ACC' },
   'figma': { icon: <FaFigma />, color: '#F24E1E' },
   'strapi': { icon: <SiStrapi />, color: '#2F2E8B' },
   'embedded': { icon: <FaMicrochip />, color: '#4A90E2' },
@@ -268,6 +268,7 @@ export default function ProjectCard({
           justify-content: flex-start;
           gap: 12px;
           margin-right: 16px;
+          flex-wrap: flex;
         }
         
         .links {
