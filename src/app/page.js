@@ -21,7 +21,7 @@ export default function Home() {
       "Designed and tuned a Colpitts oscillator-based metal detector, achieving consistent detection of Canadian coins through calibrated inductive sensing and software thresholding.",
       "Integrated multi-sensor feedback and control logic, validating system performance through iterative testing that demonstrated stable autonomous navigation and high coin-picking accuracy."
     ],
-    skills: ["C++", "Git", "x86 Assembly"],
+    skills: ["C++", "Git", "Firmware", "Embedded", "Automation", "Sensors", "Circuitry"],
     documentationUrl: "#",
     codebaseUrl: "#",
     videoUrl: "#",

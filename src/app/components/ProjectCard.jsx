@@ -1,8 +1,15 @@
 "use client";
 import React, { useState } from 'react';
 import Image from 'next/image';
+
 import { FaChevronLeft, FaChevronRight, FaReact, FaNodeJs, FaCss3Alt, FaHtml5, FaPython, FaFigma, FaGitAlt } from 'react-icons/fa';
 import { SiCplusplus, SiJavascript, SiStrapi, SiAssemblyscript } from 'react-icons/si';
+
+import { FaMicrochip, FaHdd, FaBolt, FaCubes, FaBug, FaTachometerAlt, FaFlask, FaCogs, FaSatelliteDish, FaProjectDiagram, FaRss, FaCheckCircle} from 'react-icons/fa';
+import { TfiLayout } from 'react-icons/tfi';
+import { MdSensors, MdOutlineRule } from 'react-icons/md';
+
+import { LuCircuitBoard } from "react-icons/lu";
 
 // ... (SkillIcon component and skillIcons map remain unchanged)
 const skillIcons = {
@@ -17,6 +24,20 @@ const skillIcons = {
   'x86 assembly': { icon: <SiAssemblyscript />, color: '#007ACC' },
   'figma': { icon: <FaFigma />, color: '#F24E1E' },
   'strapi': { icon: <SiStrapi />, color: '#2F2E8B' },
+  'embedded': { icon: <FaMicrochip />, color: '#4A90E2' },
+  'firmware': { icon: <FaHdd />, color: '#7F8C8D' },
+  'electronics': { icon: <FaBolt />, color: '#F1C40F' },
+  'circuitry': { icon: <LuCircuitBoard />, color: '#27AE60' },
+  'prototyping': { icon: <FaCubes />, color: '#E67E22' },
+  'sensors': { icon: <MdSensors />, color: '#9B59B6' },
+  'control': { icon: <FaTachometerAlt />, color: '#3498DB' },
+  'automation': { icon: <FaCogs />, color: '#607D8B' },
+  'communication': { icon: <FaSatelliteDish />, color: '#1ABC9C' },
+  'integration': { icon: <FaProjectDiagram />, color: '#F39C12' },
+  'debugging': { icon: <FaBug />, color: '#E74C3C' },
+  'optimization': { icon: <FaTachometerAlt />, color: '#2ECC71' }, 
+  'testing': { icon: <FaFlask />, color: '#3498DB' },
+  'calibration': { icon: <MdOutlineRule />, color: '#95A5A6' },
 };
 
 const SkillIcon = ({ skill }) => {
@@ -241,9 +262,11 @@ export default function ProjectCard({
           color: #FFFFFF;
         }
         .skills-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-          gap: 10px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 12px;
           margin-right: 16px;
         }
         
