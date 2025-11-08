@@ -4,14 +4,31 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import ProjectCard from "./components/ProjectCard.jsx";
 
+import robotImage1 from "./lib/Robot.jpg"; 
+
 export default function Home() {
+
+  const project1 = {
+    title: "Fully Autonomous Coin Detecting Robot",
+    subtitle: "ELEC 291",
+    date: "March 2025",
+    images: [
+      robotImage1,
+    ],
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    skills: ["C++", "Git", "x86 Assembly"],
+    documentationUrl: "#",
+    codebaseUrl: "#",
+    videoUrl: "#",
+  };
+
   return (
     <div className="page-root">
       <div className="page-container">
         <h1>Cole Pybus</h1>
         <div className="divider"/>
         <h1>Engineering Portfolio</h1>
-        <ProjectCard />
+        <ProjectCard {...project1}/>
       </div>
 
       <style jsx>{`
