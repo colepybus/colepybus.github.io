@@ -9,6 +9,8 @@ export default function Home() {
     <div className="page-root">
       <div className="page-container">
         <h1>Cole Pybus</h1>
+        <div className="divider"/>
+        <h1>Engineering Portfolio</h1>
         <ProjectCard />
       </div>
 
@@ -31,12 +33,20 @@ export default function Home() {
           background-color: blue;
         }
 
+        /* Divider line under the heading */
+        .page-container .divider {
+          align-self: flex-start;                /* keep the line aligned with the heading */
+          width: 160px;                           /* tweak to match Figma spacing */
+          height: 2px;
+          background-color: rgba(255, 255, 255, 0.9); /* subtle light line on dark bg */
+          border-radius: 1px;                  /* space below divider before subtitle/content */
+        }
+
         /* Heading: match Figma Heading (Pontano Sans Bold 32) */
         .page-container h1 {
           font-size: 32px;            /* Figma heading size */
           line-height: 1.2;
           font-weight: 700;           /* bold weight per Figma */
-          margin: 0 0 0.5rem 0;
           /* font-family inherits from root (Pontano Sans) */
         }
 
