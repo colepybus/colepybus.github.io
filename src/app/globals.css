@@ -1,4 +1,4 @@
-/* Reset + default background color set to #111111 for the entire site */
+/* Reset + default background color and font set to Pontano Sans */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -18,7 +18,6 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-	/* default background for every element to ensure site-wide background is #111111 */
 	background-color: #111111;
 }
 
@@ -32,17 +31,24 @@ footer, header, hgroup, menu, nav, section {
 html, body {
 	background-color: #111111;
 	min-height: 100vh;
+	/* Use the Pontano Sans variable provided by next/font/google as the default */
+	/* fallback to a system sans-serif if the CSS variable is not present */
+	font-family: var(--font-pontano-sans, "Pontano Sans"), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	color: #ffffff; /* optional: readable default text color on dark background */
 }
 
 body {
 	line-height: 1;
 }
 
-/* Optional: keep lists and tables reset behavior */
+/* Use the mono font variable for code-like elements */
+code, kbd, pre, samp {
+	font-family: var(--font-geist-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace);
+}
+
 ol, ul {
 	list-style: none;
 }
-
 blockquote, q {
 	quotes: none;
 }
