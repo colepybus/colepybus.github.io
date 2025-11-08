@@ -1,3 +1,4 @@
+/* Reset + default background color set to #111111 for the entire site */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -17,18 +18,31 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	/* default background for every element to ensure site-wide background is #111111 */
+	background-color: #111111;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+/* Ensure the root elements also carry the background and fill the viewport */
+html, body {
+	background-color: #111111;
+	min-height: 100vh;
+}
+
 body {
 	line-height: 1;
 }
+
+/* Optional: keep lists and tables reset behavior */
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
