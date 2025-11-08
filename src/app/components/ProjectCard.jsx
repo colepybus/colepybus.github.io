@@ -4,8 +4,7 @@ import Image from 'next/image';
 import { FaChevronLeft, FaChevronRight, FaReact, FaNodeJs, FaCss3Alt, FaHtml5, FaPython, FaFigma, FaGitAlt } from 'react-icons/fa';
 import { SiCplusplus, SiJavascript, SiStrapi, SiAssemblyscript } from 'react-icons/si';
 
-// A mapping of skill names to their corresponding icon components and colors.
-// This is a scalable way to manage and add new skills.
+// ... (SkillIcon component and skillIcons map remain unchanged)
 const skillIcons = {
   'c++': { icon: <SiCplusplus />, color: '#00599C' },
   'git': { icon: <FaGitAlt />, color: '#F05032' },
@@ -20,10 +19,6 @@ const skillIcons = {
   'strapi': { icon: <SiStrapi />, color: '#2F2E8B' },
 };
 
-/**
- * SkillIcon component renders an icon and name for a given skill.
- * It looks up the icon and its specific color from the skillIcons map.
- */
 const SkillIcon = ({ skill }) => {
   const skillKey = skill.toLowerCase();
   const { icon, color } = skillIcons[skillKey] || { icon: null, color: '#FFFFFF' };
@@ -48,19 +43,7 @@ const SkillIcon = ({ skill }) => {
   );
 };
 
-/**
- * ProjectCard component displays a project with an image carousel, description, and skills.
- * @param {object} props - The properties for the project.
- * @param {string} props.title - The title of the project.
- * @param {string} props.subtitle - A subtitle or course number (e.g., "ELEC 291").
- * @param {string} props.date - The completion date of the project.
- * @param {string[]} props.images - An array of image URLs for the carousel.
- * @param {string} props.description - A detailed description of the project.
- * @param {string[]} props.skills - An array of skills used in the project.
- * @param {string} [props.documentationUrl] - Optional URL for project documentation.
- * @param {string} [props.codebaseUrl] - Optional URL for the project's codebase.
- * @param {string} [props.videoUrl] - Optional URL for the project's video.
- */
+
 export default function ProjectCard({
   title,
   subtitle,
@@ -118,7 +101,8 @@ export default function ProjectCard({
       {/* Text and Details Container */}
       <div className="text-container">
         <div className="header">
-          <h2>{title} <span>{subtitle}</span></h2>
+          <h2>{title}</h2>
+          <h2>{subtitle}</h2>
           <p className="date">{date}</p>
         </div>
         <p className="description">{description}</p>
@@ -138,19 +122,20 @@ export default function ProjectCard({
       <style jsx>{`
         .project-card-container {
           width: 100%;
-          min-height: 570px;
+          /* CHANGE: Removed min-height to allow the card to grow. */
           border-radius: 12px;
           border: 2px solid rgba(255, 255, 255, 0.2);
           display: flex;
           flex-direction: row;
-          background-color: #1A1A1A; /* Dark background for the card */
-          overflow: hidden; /* Ensures child elements conform to border-radius */
+          background-color: #1A1A1A;
+          overflow: hidden;
         }
         
         .photo-container {
           position: relative;
           width: 45%;
-          height: 570px;
+          /* CHANGE: Removed fixed height and added aspect-ratio for responsiveness. */
+          aspect-ratio: 4 / 5; /* This maintains a consistent shape. Adjust as needed. */
           border-right: 2px solid rgba(255, 255, 255, 0.2);
         }
 
@@ -202,7 +187,8 @@ export default function ProjectCard({
           padding: 40px;
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
+          /* CHANGE: Replaced justify-content with gap for natural flow. */
+          gap: 24px;
           color: #FFFFFF;
         }
         
@@ -218,15 +204,14 @@ export default function ProjectCard({
         .header .date {
           font-size: 16px;
           color: #A0A0A0;
-          margin: 4px 0 0 0;
+          margin-top: 4px;
         }
         
         .description {
           font-size: 16px;
           line-height: 1.6;
           color: #D0D0D0;
-          flex-grow: 1;
-          margin-top: 24px;
+          /* CHANGE: Removed flex-grow and margin-top. Gap handles spacing. */
         }
 
         .skills-section h3 {
@@ -238,12 +223,16 @@ export default function ProjectCard({
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
           gap: 10px;
+          margin-right: 16px;
         }
         
         .links {
-          margin-top: 24px;
+          /* CHANGE: Removed margin-top. Gap handles spacing. */
           display: flex;
-          gap: 20px;
+          flex-direction: row;
+          flex-wrap: wrap;
+          margin-right: 32px;
+          gap: 40px;
         }
         .links a {
           color: #1E90FF;
@@ -257,15 +246,25 @@ export default function ProjectCard({
         @media (max-width: 900px) {
           .project-card-container {
             flex-direction: column;
-            height: auto;
+            /* CHANGE: Removed height: auto, as it's the default and not needed. */
           }
           .photo-container, .text-container {
             width: 100%;
           }
           .photo-container {
-            height: 300px; /* Adjust height for mobile */
+            /* CHANGE: Adjusted responsive photo container style. */
+            aspect-ratio: 1 / 1; /* Use a wider aspect ratio for mobile. */
             border-right: none;
             border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+          }
+          .text-container {
+            padding: 24px; /* Slightly reduce padding on mobile. */
+          }
+          .description {
+            padding-right: 32px;
+          }
+          .header h2{
+            padding-right: 32px;
           }
         }
       `}</style>
