@@ -49,6 +49,25 @@ export default function Home() {
     codebaseUrl: "https://github.com/colepybus/microwave-oven-reflow-controller"
   };
 
+  const project3 = {
+    title: "Food4U Web Application",
+    subtitle: "Civiconnect",
+    date: "August 2025",
+    images: [
+      controllerImage1,
+      controllerImage2,
+    ],
+    description: [
+      "Developed firmware in 8051 Assembly to control a reflow oven via a finite state machine, managing temperature ramp-up, soak, and reflow stages with precise timing and safety abort conditions resulting in accurate PCB soldering within 3 degrees Celsius tolerance",
+      "Engineered an analog front-end circuit with an OP07 op-amp for thermocouple voltage amplification and LM335 cold-junction compensation, performing resistor value calculations and validation tests to ensure reliable sensor readings across 25 to 240°C",
+      "Implemented serial communication and Python-based data visualization, writing a program that received live temperature data from the microcontroller, generated a real-time strip chart using matplotlib, and issued mobile notifications via the Twilio API",
+      "Integrated digital control and hardware testing by designing multiplexed pushbutton inputs with debouncing and safety constraints, verifying complete system operation through iterative bench tests and successful reflow of EFM8 PCB assemblies"
+    ],
+    skills: ["Assembly", "Python", "Git", "Firmware", "Embedded", "Circuitry", "Control"],
+    documentationUrl: "https://drive.google.com/file/d/1WaSEEIW4RzVoRPQ2Ls94765pbYgXjYRl/view?usp=sharing",
+    codebaseUrl: "https://github.com/colepybus/microwave-oven-reflow-controller"
+  };
+
   return (
     <div className="page-root">
       <div className="page-container">
