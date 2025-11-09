@@ -12,7 +12,11 @@ import food4uImage1 from "./lib/food4u.jpeg";
 
 import discoverLincolnImage1 from "./lib/discoverLincoln.jpeg";
 
+import fluxImage from "./lib/DashboardDesktop.jpg";
+
 import robotClawImage from "./lib/robotClaw.jpg";
+
+import lab6Image from "./lib/lab6.jpg";
 
 export default function Home() {
 
@@ -68,7 +72,7 @@ export default function Home() {
       "Designed and constructed a responsive user interface with React and advanced CSS, meticulously translating high-fidelity Figma mockups into a pixel-perfect application that provides an intuitive workflow for managing dietary preferences and browsing personalized meal suggestions",
       "Implemented a robust version control strategy using Git and GitHub for collaborative development, managing feature branches, pull requests, and code reviews to maintain a high-quality, stable codebase throughout the project lifecycle from initial concept to deployment",
     ],
-    skills: ["JavaScript", "React", "HTML", "CSS", "NodeJS", "Figma", "Strapi"],
+    skills: ["JavaScript", "React", "Git", "HTML", "CSS", "NodeJS", "Figma", "Strapi"],
   };
 
   const discoverlincoln = {
@@ -84,7 +88,7 @@ export default function Home() {
       "Architected a scalable content infrastructure with a headless Strapi CMS to manage diverse tourism data such as destinations, accommodations, and tour packages, ensuring efficient content updates and API-driven delivery to the front-end application without downtime",
       "Established a disciplined development workflow utilizing Git for version control and GitHub for collaborative code management, orchestrating feature development and issue tracking to ensure consistent code quality and successful project progression from concept to a live prototype",
     ],
-    skills: ["JavaScript", "React", "HTML", "CSS", "NodeJS", "Figma", "Strapi"],
+    skills: ["JavaScript", "React", "Git", "HTML", "CSS", "NodeJS", "Figma", "Strapi"],
   };
 
   const robotclaw = {
@@ -104,42 +108,37 @@ export default function Home() {
     documentationUrl: "https://drive.google.com/file/d/1juI0G19sEPWpp3_ifer36zREllnJgHSp/view?usp=share_link",
   };
 
-  const project6 = {
-    title: "Food4U Web Application",
+  const fluxproductivity = {
+    title: "Flux Productivity Web Application",
     subtitle: "Civiconnect",
-    date: "August 2025",
+    date: "October 2025",
     images: [
-      controllerImage1,
-      controllerImage2,
+      fluxImage,
     ],
     description: [
-      "",
-      "",
-      "",
-      "",
+      "Engineered a full-stack productivity application using Next.js and React to empower users to track habits, tasks, and work sessions, integrating a Strapi CMS to manage user data and provide actionable insights into personal efficiency and time management",
+      "Architected a scalable backend content system using Strapi to manage complex data interdependencies between users, tasks, and habit logs, designing a data schema that guaranteed integrity and supported robust, high-performance analytical features",
+      "Designed and developed a responsive and intuitive user interface with React and advanced CSS, meticulously translating high-fidelity Figma mockups into a pixel-perfect dashboard that provides a seamless experience for goal setting and progress visualization",
+      "Implemented a disciplined version control workflow using Git and GitHub to manage collaborative development, utilizing feature branches and systematic code reviews to maintain a high-quality, stable codebase throughout the entire project lifecycle from conception to deployment",
     ],
-    skills: ["Assembly", "Python", "Git", "Firmware", "Embedded", "Circuitry", "Control"],
-    documentationUrl: "https://drive.google.com/file/d/1WaSEEIW4RzVoRPQ2Ls94765pbYgXjYRl/view?usp=sharing",
-    codebaseUrl: "https://github.com/colepybus/microwave-oven-reflow-controller"
+    skills: ["JavaScript", "React", "Git", "HTML", "CSS", "NodeJS", "Figma", "Strapi"],
   };
 
-  const project7 = {
-    title: "Food4U Web Application",
-    subtitle: "Civiconnect",
-    date: "August 2025",
+  const capacitancemeter = {
+    title: "Capacitance Meter",
+    subtitle: "ELEC 291 | UBC",
+    date: "March 2025",
     images: [
-      controllerImage1,
-      controllerImage2,
+      lab6Image,
     ],
     description: [
-      "",
-      "",
-      "",
-      "",
+      "Engineered a precision capacitance meter by integrating an STM32 microcontroller with a 555 timer circuit, developing a system capable of accurately measuring and displaying capacitance values from 1 nF to 1 µF on a dedicated LCD screen",
+      "Developed and deployed C-based firmware for the STM32 platform, programming hardware timers and input capture peripherals to precisely measure the frequency of the 555 astable oscillator for capacitance calculation",
+      "Designed and constructed a complete hardware-software solution, interfacing an analog 555 timer circuit with the STM32's digital processing capabilities to successfully convert signal frequency into a direct capacitance reading, fulfilling all project requirements",
+      "Demonstrated proficiency with ARM Cortex-M architecture by successfully adapting project requirements to the STM32 microcontroller, managing the entire project lifecycle from component selection and circuit assembly to final system demonstration",
     ],
-    skills: ["Assembly", "Python", "Git", "Firmware", "Embedded", "Circuitry", "Control"],
-    documentationUrl: "https://drive.google.com/file/d/1WaSEEIW4RzVoRPQ2Ls94765pbYgXjYRl/view?usp=sharing",
-    codebaseUrl: "https://github.com/colepybus/microwave-oven-reflow-controller"
+    skills: ["C", "Git", "Firmware", "Embedded", "Circuitry", "Electronics", "Optimzation"],
+    codebaseUrl: "https://github.com/colepybus/stm32-capacitance-meter"
   };
 
   return (
@@ -159,6 +158,8 @@ export default function Home() {
           <ProjectCard {...elec291project2}/>
           <ProjectCard {...elec291project1}/>
           <ProjectCard {...robotclaw}/>
+          <ProjectCard {...capacitancemeter}/>
+          <ProjectCard {...fluxproductivity}/>
           <ProjectCard {...food4u}/>
           <ProjectCard {...discoverlincoln}/>
         </div>
