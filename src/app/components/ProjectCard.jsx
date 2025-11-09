@@ -13,7 +13,7 @@ import { LuCircuitBoard } from "react-icons/lu";
 
 // ... (SkillIcon component and skillIcons map remain unchanged)
 const skillIcons = {
-  'c++': { icon: <SiCplusplus />, color: '#00599C' },
+  'c': { icon: <SiCplusplus />, color: '#00599C' },
   'git': { icon: <FaGitAlt />, color: '#F05032' },
   'react': { icon: <FaReact />, color: '#61DAFB' },
   'javascript': { icon: <SiJavascript />, color: '#F7DF1E' },
