@@ -1,5 +1,7 @@
 "use client";
 
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+
 import ProjectCard from "./components/ProjectCard.jsx";
 
 import robotImage1 from "./lib/Robot.jpg";
@@ -145,7 +147,20 @@ export default function Home() {
     <div className="page-root">
       <div className="page-container">
         <div className="title-container">
-          <h1>Cole Pybus</h1>
+          <div className="top-container">
+            <h1>Cole Pybus</h1>
+            <div className="icon-container">
+              <a href="https://linkedin.com/in/cole-pybus" target="_blank" rel="noopener noreferrer" className="icon">
+                <FaLinkedin size="40px" color="white"/>
+              </a>
+              <a href="https://github.com/colepybus" target="_blank" rel="noopener noreferrer" className="icon">
+                <FaGithub size="40px" color="white"/>
+              </a>
+              <a href="mailto:colepybus@gmail.com" className="icon">
+                <FaEnvelope size="40px" color="white"/>
+              </a>
+            </div>
+          </div>
           <div className="divider"/>
           <h1>Engineering Portfolio</h1>
         </div>
@@ -189,6 +204,19 @@ export default function Home() {
 
         .intro-container{
           margin-bottom: 32px;
+        }
+
+        .top-container{
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .icon-container {
+          display: flex;
+          gap: 16px; /* Space between icons */
         }
 
         .projects-container{
