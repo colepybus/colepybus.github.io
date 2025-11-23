@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from 'react';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 import ProjectCard from "./components/ProjectCard.jsx";
@@ -21,8 +22,10 @@ import robotClawImage from "./lib/robotClaw.jpg";
 import lab6Image from "./lib/lab6.jpg";
 
 export default function Home() {
+  const [activeFilter, setActiveFilter] = useState('hardware');
 
   const elec291project2 = {
+    type: "hardware",
     title: "Autonomous Coin Detecting Robot",
     subtitle: "ELEC 291 | UBC",
     date: "March 2025",
@@ -43,6 +46,7 @@ export default function Home() {
   };
 
   const elec291project1 = {
+    type: "hardware",
     title: "Reflow Oven Temperature Control System",
     subtitle: "ELEC 291 | UBC",
     date: "February 2025",
@@ -62,6 +66,7 @@ export default function Home() {
   };
 
   const food4u = {
+    type: "software",
     title: "Food4U Web Application",
     subtitle: "Civiconnect",
     date: "August 2024",
@@ -79,6 +84,7 @@ export default function Home() {
   };
 
   const discoverlincoln = {
+    type: "software",
     title: "Discover Lincoln Web Application",
     subtitle: "Civiconnect",
     date: "May 2024",
@@ -95,6 +101,7 @@ export default function Home() {
   };
 
   const robotclaw = {
+    type: "hardware",
     title: "Two Arm Robotic Claw",
     subtitle: "APSC 101 | UBC",
     date: "February 2024",
@@ -112,6 +119,7 @@ export default function Home() {
   };
 
   const fluxproductivity = {
+    type: "software",
     title: "Flux Productivity Web Application",
     subtitle: "Civiconnect",
     date: "October 2025",
@@ -128,6 +136,7 @@ export default function Home() {
   };
 
   const capacitancemeter = {
+    type: "hardware",
     title: "Capacitance Meter",
     subtitle: "ELEC 291 | UBC",
     date: "March 2025",
@@ -143,6 +152,18 @@ export default function Home() {
     skills: ["C", "Git", "Firmware", "Embedded", "Circuitry", "Electronics", "Optimzation"],
     codebaseUrl: "https://github.com/colepybus/stm32-capacitance-meter"
   };
+
+  const allProjects = [
+    elec291project2,
+    elec291project1,
+    robotclaw,
+    capacitancemeter,
+    fluxproductivity,
+    food4u,
+    discoverlincoln
+  ];
+
+  const filteredProjects = allProjects.filter(project => project.type === activeFilter);
 
   return (
     <div className="page-root">
@@ -170,14 +191,29 @@ export default function Home() {
           <p>Currently on a CO-OP term as a software engineering team lead at Civiconnect</p>
           <p>My projects below showcase my skills in computer, software, and electrical engineering</p>
         </div>
+
+        {/* Toggle Switch */}
+        <div className="toggle-container">
+          <div className={`slider-bg ${activeFilter === 'software' ? 'slide-right' : ''}`} />
+          
+          <button 
+            className={`toggle-btn ${activeFilter === 'hardware' ? 'active' : ''}`}
+            onClick={() => setActiveFilter('hardware')}
+          >
+            Hardware
+          </button>
+          <button 
+            className={`toggle-btn ${activeFilter === 'software' ? 'active' : ''}`}
+            onClick={() => setActiveFilter('software')}
+          >
+            Software
+          </button>
+        </div>
+
         <div className="projects-container">
-          <ProjectCard {...elec291project2}/>
-          <ProjectCard {...elec291project1}/>
-          <ProjectCard {...robotclaw}/>
-          <ProjectCard {...capacitancemeter}/>
-          <ProjectCard {...fluxproductivity}/>
-          <ProjectCard {...food4u}/>
-          <ProjectCard {...discoverlincoln}/>
+          {filteredProjects.map((project, index) => (
+            <ProjectCard key={index} {...project} />
+          ))}
         </div>
       </div>
 
@@ -204,7 +240,7 @@ export default function Home() {
         }
 
         .intro-container{
-          margin-bottom: 32px;
+          margin-bottom: 0px;
         }
 
         .top-container{
@@ -218,6 +254,61 @@ export default function Home() {
         .icon-container {
           display: flex;
           gap: 16px; /* Space between icons */
+        }
+        
+        /* Toggle Switch Styles */
+        .toggle-container {
+          position: relative;
+          display: flex;
+          background-color: #2A2A2A;
+          /* CHANGE: Reduced border radius for rectangular look */
+          border-radius: 12px;
+          padding: 4px;
+          /* CHANGE: Fixed width for consistent sliding calculations */
+          width: 300px; 
+          height: 48px;
+          margin: 16px auto 24px auto; 
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* The sliding background pill */
+        .slider-bg {
+          position: absolute;
+          top: 4px;
+          left: 4px;
+          width: calc(50% - 4px); /* Half width minus padding */
+          height: calc(100% - 8px);
+          background-color: #FFFFFF;
+          /* CHANGE: Reduced border radius for rectangular look */
+          border-radius: 8px;
+          transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+          z-index: 1; /* Behind the text */
+        }
+
+        .slider-bg.slide-right {
+          transform: translateX(100%); /* Moves exactly one width over */
+        }
+
+        .toggle-btn {
+          flex: 1;
+          position: relative;
+          z-index: 2; /* Text sits on top */
+          background: transparent;
+          border: none;
+          color: #A0A0A0;
+          font-family: inherit;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: color 0.3s ease;
+        }
+
+        .toggle-btn.active {
+          color: #000000;
+        }
+
+        .toggle-btn:hover:not(.active) {
+          color: #FFFFFF;
         }
 
         .projects-container{

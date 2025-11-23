@@ -75,6 +75,7 @@ export default function ProjectCard({
   documentationUrl,
   codebaseUrl,
   videoUrl,
+  type,
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
