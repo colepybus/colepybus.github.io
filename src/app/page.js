@@ -75,6 +75,7 @@ export default function Home() {
       "Implemented a robust version control strategy using Git and GitHub for collaborative development, managing feature branches, pull requests, and code reviews to maintain a high-quality, stable codebase throughout the project lifecycle from initial concept to deployment",
     ],
     skills: ["JavaScript", "React", "Git", "HTML", "CSS", "NodeJS", "Figma", "Strapi"],
+    documentationUrl: "https://drive.google.com/file/d/1I6abcjxaLM_A27p0wAn5yZ8-kOVRaXOq/view?usp=sharing",
   };
 
   const discoverlincoln = {
