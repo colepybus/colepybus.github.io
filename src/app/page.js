@@ -188,7 +188,8 @@ export default function Home() {
         </div>
         <div className="intro-container">
           <p>I’m a third year electrical engineering student at the University of British Columbia in Vancouver, Canada</p>
-          <p>Currently on a CO-OP term as a software engineering team lead at Civiconnect</p>
+          <p>Currently on an exchange semester in Switzerland at École Polytechnique Federale de Lausanne</p>
+          <p>Was previously on a CO-OP term as a software engineering team lead at Civiconnect</p>
           <p>My projects below showcase my skills in computer, software, and electrical engineering</p>
         </div>
 
