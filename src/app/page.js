@@ -5,8 +5,8 @@ import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 import ProjectCard from "./components/ProjectCard.jsx";
 
-import converterImage1 from "./lib/Top_Layer_2D.jpg";
-import converterImage2 from "./lib/Top_Layer_3D.jpg";
+import converterImage1 from "./lib/topLayerOne.jpg";
+import converterImage2 from "./lib/topLayerTwo.jpg";
 
 import robotImage1 from "./lib/Robot.jpg";
 import robotImage2 from "./lib/controller.jpg"; 
