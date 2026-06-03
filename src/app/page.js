@@ -5,6 +5,9 @@ import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 import ProjectCard from "./components/ProjectCard.jsx";
 
+import converterImage1 from "./lib/Top_Layer_2D.jpg";
+import converterImage2 from "./lib/Top_Layer_3D.jpg";
+
 import robotImage1 from "./lib/Robot.jpg";
 import robotImage2 from "./lib/controller.jpg"; 
 
@@ -23,6 +26,24 @@ import lab6Image from "./lib/lab6.jpg";
 
 export default function Home() {
   const [activeFilter, setActiveFilter] = useState('hardware');
+
+  const dabconverter = {
+    type: "hardware",
+    title: "DC-DC Dual Active Bridge Converter",
+    subtitle: "EE 365 | EPFL",
+    date: "June 2025",
+    images: [
+      converterImage1,
+      converterImage2,
+    ],
+   "description": [
+  "Derived phase-shift control parameters and calculated component values for the series inductor, H-bridge MOSFETs, and high-frequency transformer to step 50V down to 5V at a 160kHz switching frequency",
+  "Designed a galvanically isolated Dual Active Bridge topology with two full H-bridges and a center transformer, selecting gate driver ICs and protection circuitry based on analytical current and voltage limit verification",
+  "Translated full schematic into a multi-layer PCB layout in Altium Designer, applying best practices for high-frequency switching layout including ground plane management and component placement for EMI reduction",
+  "Soldered and assembled all surface-mount and through-hole components, conducted staged hardware validation including gate timing verification and current limit checks to confirm switching behavior matched simulation"
+],
+    skills: ["Sensors", "Circuitry", "Prototyping", "Control", "Debugging", "Testing", "Calibration"],
+  };
 
   const elec291project2 = {
     type: "hardware",
