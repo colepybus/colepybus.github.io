@@ -175,6 +175,7 @@ export default function Home() {
   };
 
   const allProjects = [
+    dabconverter,
     elec291project2,
     elec291project1,
     robotclaw,
