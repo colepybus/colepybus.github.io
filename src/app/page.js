@@ -31,7 +31,7 @@ export default function Home() {
     type: "hardware",
     title: "DC-DC Dual Active Bridge Converter",
     subtitle: "EE 365 | EPFL",
-    date: "June 2025",
+    date: "June 2026",
     images: [
       converterImage1,
       converterImage2,
