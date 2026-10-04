@@ -7,6 +7,7 @@ import ProjectCard from "./components/ProjectCard.jsx";
 
 import converterImage1 from "./lib/topLayerOne.jpg";
 import converterImage2 from "./lib/topLayerTwo.jpg";
+import dabPhysical from "./lib/dabPhysical.JPG";
 
 import robotImage1 from "./lib/Robot.jpg";
 import robotImage2 from "./lib/controller.jpg"; 
