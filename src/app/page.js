@@ -34,6 +34,7 @@ export default function Home() {
     date: "June 2026",
     images: [
       converterImage1,
+      dabPhysical,
       converterImage2,
     ],
    "description": [
