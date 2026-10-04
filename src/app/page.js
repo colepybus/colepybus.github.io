@@ -210,7 +210,7 @@ export default function Home() {
         </div>
         <div className="intro-container">
           <p>I’m an electrical engineering undergraduate student at the University of British Columbia in Vancouver, Canada</p>
-          <p>I just completed an exchange semester in Switzerland at École Polytechnique Federale de Lausanne, complemented with an AI + Data research internship within the Data Intensive Applications and Systems lab at EPFL</p>
+          <p>I just completed an exchange semester in Switzerland at the Swiss Federal Institute of Technology in Lausanne (EPFL), complemented with an AI + Data research internship within the Data Intensive Applications and Systems lab</p>
           <p>My projects below showcase my skills in embedded, software, and electrical engineering</p>
         </div>
 
