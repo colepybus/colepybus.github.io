@@ -7,7 +7,7 @@ import ProjectCard from "./components/ProjectCard.jsx";
 
 import converterImage1 from "./lib/topLayerOne.jpg";
 import converterImage2 from "./lib/topLayerTwo.jpg";
-import dabPhysical from "./lib/dabPhysical.JPG";
+import dabPhysical from "./lib/dabPhysical.jpg";
 
 import robotImage1 from "./lib/Robot.jpg";
 import robotImage2 from "./lib/controller.jpg"; 
@@ -25,8 +25,28 @@ import robotClawImage from "./lib/robotClaw.jpg";
 
 import lab6Image from "./lib/lab6.jpg";
 
+import baccaratImage from "./lib/baccarat_de1soc.jpg";
+
 export default function Home() {
   const [activeFilter, setActiveFilter] = useState('hardware');
+
+  const baccarat = {
+    type: "hardware",
+    title: "FPGA Baccarat Game Engine",
+    subtitle: "CPEN 311 | UBC",
+    date: "October 2026",
+    images: [
+      baccaratImage,
+    ],
+    description: [
+      "Created a Baccarat game engine in SystemVerilog on the DE1-SoC Intel FPGA board, compiled using Questa and synthesized using Quartus",
+      "Designed a finite state machine to control game flow, dealing two cards each to the player and dealer and applying the Baccarat third-card rules based on hand scores and the player's third card",
+      "Built a datapath with card registers, a dealer counter on the 50 MHz clock, combinational scoring logic that computes each hand modulo 10, and six seven-segment decoders to display the cards",
+      "Wrote testbenches for the scoring logic, datapath, state machine, and top-level module to verify the design in simulation"
+    ],
+    skills: ["Control", "Testing", "Git"],
+    codebaseUrl: "https://github.com/colepybus/systemVerilogBaccarat"
+  };
 
   const dabconverter = {
     type: "hardware",
@@ -177,6 +197,7 @@ export default function Home() {
   };
 
   const allProjects = [
+    baccarat,
     dabconverter,
     elec291project2,
     elec291project1,
