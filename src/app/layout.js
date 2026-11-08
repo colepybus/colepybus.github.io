@@ -16,10 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Cole Pybus Engineering Portfolio",
   description: "Cole's Engineering Portfolio",
-    icon: {
-        url: '/favicon.ico', // Path to your dark mode icon
-    }
-  };
+};
 
 
 export default function RootLayout({ children }) {
