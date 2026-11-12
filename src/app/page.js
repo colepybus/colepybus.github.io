@@ -27,8 +27,32 @@ import lab6Image from "./lib/lab6.jpg";
 
 import baccaratImage from "./lib/baccarat_de1soc.jpg";
 
+import arc4Image1 from "./lib/keyDisplay.jpg";
+import arc4Image2 from "./lib/DecryptedMessage.png";
+import arc4Image3 from "./lib/InstantiatedMemory.png";
+
 export default function Home() {
   const [activeFilter, setActiveFilter] = useState('hardware');
+
+  const arc4 = {
+    type: "hardware",
+    title: "FPGA ARC4 Decryption & Key Cracking Engine",
+    subtitle: "CPEN 311 | UBC",
+    date: "November 2026",
+    images: [
+      arc4Image1,
+      arc4Image2,
+      arc4Image3,
+    ],
+    description: [
+      "Built a hardware ARC4 (RC4) decryption and key-cracking engine in SystemVerilog on the DE1-SoC Intel FPGA board, simulated and verified in Questa and synthesized using Quartus",
+      "Designed FSM-controlled modules for each cipher stage (S-array initialization, key-scheduling algorithm, and pseudo-random generation algorithm), linked by a ready/enable handshake and sharing on-chip M10K memory",
+      "Implemented parallel cracking cores that brute-force the 24-bit key space and display the recovered key on the seven-segment HEX displays",
+      "Wrote RTL and post-synthesis testbenches for every module and inspected memory contents on the board using the In-System Memory Content Editor"
+    ],
+    skills: ["Control", "Testing", "Debugging", "Git"],
+    codebaseUrl: "https://github.com/colepybus/systemVerilogARC4Decryptor"
+  };
 
   const baccarat = {
     type: "hardware",
@@ -197,6 +221,7 @@ export default function Home() {
   };
 
   const allProjects = [
+    arc4,
     baccarat,
     dabconverter,
     elec291project2,
